@@ -1,18 +1,28 @@
-import React from 'react';
-
+import React , { useState }from 'react';
+import data from './data';
+ 
 const List = ({ people }) => {
+ //const [item, setItem] = useState(data)
   return (
     <>
       {people.map((person) => {
-        const { id, name, age, image } = person;
+        const {img, id, name, username, email, website,phone } = person;
         return (
           <article key={id} className='person'>
-            <img src={image} alt={name} />
+            <img src={img}></img>
             <div>
-              <h4>{name}</h4>
-              <p>{age} years</p>
+              <h4>Name: {name}</h4> 
+              <p>Username: {username} </p>
+              <p>Email: {email}</p>
+              <p>Phone: {phone}</p>
+              <p>Website: {website}</p>
             </div>
+            <br/>
+            <hr></hr>
+
           </article>
+          
+          
         );
       })}
     </>
